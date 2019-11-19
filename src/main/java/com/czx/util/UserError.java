@@ -1,0 +1,13 @@
+package com.czx.util;
+
+public enum UserError {
+    USERNAME_NUll,
+    USERNICKNAME_NULL,
+    USERID_NULL,
+    PASSWORD_NULL,
+    USER_NAME_REPEAT,
+    SUCCESS,
+    USERNAME_OR_PASSWORD_ERROR,
+    PASSWORD_ERROR,
+    USER_NONE,
+}
