@@ -2,10 +2,10 @@ package com.czx.bean;
 
 import java.util.Date;
 
-public class notebook {
+public class Notebook {
     private String id;
     private User user;
-    private notebook_type notebook_type;
+    private NotebookType notebookType;
     private String name;
     private Date createtime;
 
@@ -25,12 +25,12 @@ public class notebook {
         this.user = user;
     }
 
-    public com.czx.bean.notebook_type getNotebook_type() {
-        return notebook_type;
+    public NotebookType getNotebookType() {
+        return notebookType;
     }
 
-    public void setNotebook_type(com.czx.bean.notebook_type notebook_type) {
-        this.notebook_type = notebook_type;
+    public void setNotebookType(NotebookType notebookType) {
+        this.notebookType = notebookType;
     }
 
     public String getName() {
@@ -54,7 +54,7 @@ public class notebook {
         return "notebook{" +
                 "id='" + id + '\'' +
                 ", user=" + user +
-                ", notebook_type=" + notebook_type +
+                ", notebookType=" + notebookType +
                 ", name='" + name + '\'' +
                 ", createtime=" + createtime +
                 '}';

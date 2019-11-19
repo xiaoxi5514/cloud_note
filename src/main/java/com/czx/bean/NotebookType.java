@@ -1,6 +1,6 @@
 package com.czx.bean;
 
-public class notebook_type {
+public class NotebookType {
     private String id;
     private String name;
     private String desc;

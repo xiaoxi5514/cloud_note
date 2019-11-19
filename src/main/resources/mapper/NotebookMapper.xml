@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.czx.dao.NotebookDao">
+	<sql id="col">
+		nb_id as id,
+		u_id as 'user.id',
+		nbt_id as 'notebookType.id',
+		nb_name as name,
+		nb_createtime as createtime
+	</sql>
+	<insert id="add" useGeneratedKeys="true" keyProperty="id">
+		insert into cn_notebook(nb_id,u_id,nbt_id,nb_name,nb_createtime) values(#{id},#{user.id},#{notebookType.id},#{name},#{createtime})
+	</insert>
+	<update id="update">
+		update cn_notebook set u_id=#{user.id},nbt_id=#{notebookType.id},nb_name=#{name},nb_createtime=#{createtime} where nb_id=#{id}
+	</update>
+	<delete id="delete">
+		delete from cn_notebook where nb_id=#{id}
+	</delete>
+	<select id="findByUserSpecial" resultType="com.czx.bean.Notebook">
+		select <include refid="col"/> from  cn_notebook;
+	</select>
+	<select id="findByUserNormal" resultType="com.czx.bean.Notebook" useCache="true">
+		select <include refid="col"/> from cn_notebook where u_id=#{id}
+	</select>
+</mapper>
