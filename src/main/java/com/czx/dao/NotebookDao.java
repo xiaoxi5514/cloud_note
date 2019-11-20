@@ -9,7 +9,8 @@ public interface NotebookDao {
     void add(Notebook notebook);
     void update(Notebook notebook);
     void delete(String id);
-    List<Notebook> findByUserSpecial(User user );
-    List<Notebook> findByUserNormal(User user );
+    List<Notebook> findByUserSpecial(User user);
+    List<Notebook> findByUserNormal(User user);
+    Notebook findByName(Notebook notebook);
 
 }

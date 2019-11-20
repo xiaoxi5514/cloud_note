@@ -18,9 +18,12 @@
 		delete from cn_notebook where nb_id=#{id}
 	</delete>
 	<select id="findByUserSpecial" resultType="com.czx.bean.Notebook">
-		select <include refid="col"/> from  cn_notebook;
+		select <include refid="col"/> from  cn_notebook nb join cn_notebook_type nbt on nb.nbt_id==nbt.t_id where u_id=#{user.id} and nbt.t_name='normal'
 	</select>
 	<select id="findByUserNormal" resultType="com.czx.bean.Notebook" useCache="true">
-		select <include refid="col"/> from cn_notebook where u_id=#{id}
+	select <include refid="col"/> from  cn_notebook nb join cn_notebook_type nbt on nb.nbt_id==nbt.t_id where u_id=#{user.id} and nbt.t_name='normal'
+	</select>
+	<select id="findByName" resultType="com.czx.bean.Notebook" useCache="true">
+	select <include refid="col"/> from cn_notebook where u_id=#{user.id} and nb_name=#{name}
 	</select>
 </mapper>
