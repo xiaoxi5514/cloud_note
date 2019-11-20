@@ -4,7 +4,7 @@
 	<sql id="col">
 		t_id as id,
 		t_name as name,
-		t_desc as desc
+		t_desc as tDesc
 	</sql>
 	<select id="findNormal" resultType="com.czx.bean.NotebookType" useCache="true">
 		select <include refid="col"/> from cn_notebook_type where t_name='normal'

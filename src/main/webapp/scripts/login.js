@@ -123,7 +123,7 @@ function login() {
                     alert(result.value.nickname+"登录成功");
                     location.href="/edit.html";
                 }else{
-                    $('.error').html(result.msg);
+                    $('#error').html(result.msg);
                 }
             }
         })

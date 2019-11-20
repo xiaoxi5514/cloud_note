@@ -2,5 +2,6 @@ package com.czx.util;
 
 public enum NotebookError {
     NAME_NULL,
-    SUCCESS
+    SUCCESS,
+    NAME_REPEAT
 }

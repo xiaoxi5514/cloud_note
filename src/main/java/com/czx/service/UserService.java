@@ -7,8 +7,6 @@ import com.czx.util.UserError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.beans.Transient;
 import java.util.List;
 import java.util.UUID;
 
@@ -16,6 +14,8 @@ import java.util.UUID;
 public class UserService {
     @Autowired
     private UserDao dao;
+    @Autowired
+    private NotebookService notebookService;
     public List<User> userList(){
         List<User> users = dao.findAll();
         return users;
@@ -44,6 +44,7 @@ public class UserService {
         user.setId(UUID.randomUUID().toString().replaceAll("-",""));
         user.setPassword(Md5Util.md5(user.getPassword()));
         dao.add(user);
+        notebookService.initSpecialNotebook(user.getId());
         return UserError.SUCCESS;
     }
     @Transactional(readOnly = true)

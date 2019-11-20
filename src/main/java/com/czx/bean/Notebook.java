@@ -9,6 +9,23 @@ public class Notebook {
     private String name;
     private Date createtime;
 
+    public Notebook(String id, User user, NotebookType notebookType, String name, Date createtime) {
+        this.id = id;
+        this.user = user;
+        this.notebookType = notebookType;
+        this.name = name;
+        this.createtime = createtime;
+    }
+
+    public Notebook(String id, User user) {
+        this.id = id;
+        this.user = user;
+    }
+
+    public Notebook() {
+        super();
+    }
+
     public String getId() {
         return id;
     }

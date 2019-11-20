@@ -3,7 +3,15 @@ package com.czx.bean;
 public class NotebookType {
     private String id;
     private String name;
-    private String desc;
+    private String tDesc;
+
+    public NotebookType(String id) {
+        this.id = id;
+    }
+
+    public NotebookType() {
+        super();
+    }
 
     public String getId() {
         return id;
@@ -21,12 +29,12 @@ public class NotebookType {
         this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
+    public String gettDesc() {
+        return tDesc;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void settDesc(String tDesc) {
+        this.tDesc = tDesc;
     }
 
     @Override
@@ -34,7 +42,7 @@ public class NotebookType {
         return "notebook_type{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", desc='" + desc + '\'' +
+                ", tDesc='" + tDesc + '\'' +
                 '}';
     }
 }
